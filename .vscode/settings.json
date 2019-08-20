@@ -1,0 +1,86 @@
+{
+    // reload window is required to apply.
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true
+    },
+    "files.enableTrash": true,
+    "files.defaultLanguage": "lua",
+    // "files.simpleDialog.enable": true,
+    // "watch-run.targetList": [
+    //     {
+    //         "target": "test.ini",
+    //         "task": "Lni2W3x"
+    //     },
+    // ],
+    "triggerTaskOnSave.on": true,
+    "triggerTaskOnSave.tasks": {
+        "Lni2W3x": [
+            "lni/table/*.ini",
+            "lni/resource/**/*.blp",
+            "lni/resource/**/*.mdx",
+            "lni/resource/**/*.lua",
+        ]
+    },
+    // not work on 1.37
+    // "saveAndRun": {
+    //     "commands": [
+    //       {
+    //         "match": ".*",
+    //         "cmd": "echo 'I run for all files.'",
+    //         "useShortcut": false,
+    //         "silent": false
+    //       },
+    //       {
+    //         "match": "\\.txt$",
+    //         "cmd": "echo 'I am a .txt file ${file}.'",
+    //         "useShortcut": false,
+    //         "silent": false
+    //       },
+    //       {
+    //         "match": "*.ini$",
+    //         "cmd": "call .vscode/scripts/lni2w3x.bat",
+    //         "useShortcut": false,
+    //         "silent": false
+    //       }
+    //     ]
+    // },
+    // fork from saveAndRun
+    // "saveAndRunExt": {
+    //     "commands": [
+    //         {
+    //             "match": ".*",
+    //             "isShellCommand" : false,
+    //             "cmd": "extension.sayName"
+    //         },
+    //         {
+    //             "match": "\\.txt$",
+    //             "cmd": "echo 'Executed in the terminal: I am a .txt file ${file}.'"
+    //         },
+    //         {
+    //             "match": "lni\\table\\*.ini",
+    //             "isShellCommand" : true,
+    //             "cmd": "call .vscode\\scripts\\lni2w3x.bat"
+    //         }
+    //     ]
+    // }
+    
+    // "json.schemas": [
+    //     {
+    //         "fileMatch": [
+    //             "tasks.json"
+    //         ],
+    //         "url": "/jshintrc.tasks.json"
+    //     }
+    // ]
+
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/.gitignore": true,
+    }
+}

@@ -1,0 +1,183 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Lni2W3x",
+            "type": "shell",
+            "command": ".vscode\\scripts\\lni2w3x.bat",
+            "args": [
+                // "arg1",
+                // {
+                //     "value": "arg2",
+                //     "quoting": "escape"
+                // }
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}",
+                // "statusbar": "hide",
+                "statusbarLabel": "$(home) W3X"
+            },
+            "dependsOrder": "sequence",
+            "dependsOn": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            }
+        },
+        {
+            "label": "W3x2Lni",
+            "type": "shell",
+            "command": ".vscode\\scripts\\w3x2lni.bat",
+            "args": [],
+            "options": {
+                "cwd": "${workspaceFolder}",
+                // "statusbar": "hide",
+                "statusbarLabel": "$(file-symlink-directory) LNI"
+            },
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            }
+        },
+        {
+            "label": "W3x2Slk",
+            "type": "shell",
+            "command": ".vscode\\scripts\\w3x2slk.bat",
+            "args": [],
+            "options": {
+                "cwd": "${workspaceFolder}",
+                // "statusbar": "hide",
+                "statusbarLabel": "$(lock) SLK"
+            },
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            }
+        },
+        {
+            "label": "test map",
+            "type": "shell",
+            "command": "start",
+            "args": [
+                "/D",
+                "C:\\Users\\zd870\\Desktop\\WE\\WorldEdit v1.2.2.1\\bin",
+                "ydweconfig.exe",
+                "-launchwar3",
+                "-loadfile",
+                "${workspaceFolder}\\test.w3x"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}",
+                // "statusbar": "hide",
+                "statusbarLabel": "$(play) 测试"
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {   
+            "label": "open map",
+            "type": "shell",
+            "command": "start",
+            "args": [
+                "/D",
+                "C:\\Users\\zd870\\Desktop\\WE\\WorldEdit v1.2.2.1",
+                "WorldEdit.exe",
+                "-loadfile",
+                "${workspaceFolder}\\test.w3x"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}",
+                // "statusbar": "hide",
+                "statusbarLabel": "$(rocket) YDWE"
+            },
+            "group": "none",
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            }
+        },
+        {   
+            "label": "test",
+            "type": "shell",
+            "command": "echo",
+            "args": [
+                "-->",
+                // 预定义的变量(VS Code)
+                "${file}",
+                // 环境变量(Windows System)
+                // "${env:ComSpec}",
+                // 配置变量(VS Code)
+                // "${config:editor.fontSize}",
+                // 命令变量(VS Code)
+                // "${command:extension.sayHello}",
+                // 输入变量(VS Code)
+                // "${input:ccc}"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}",
+                // "statusbar": "hide",
+                "statusbarLabel": "$(squirrel) test"
+            }
+        }
+    ],
+    "inputs": [
+        {
+            "id": "aaaa",
+            "type":"pickString",
+            "options": [
+                "Python",
+                "C++"
+            ],
+            "description": "Which language do you like?",
+            "default": "Python"
+        },
+        {
+            "id": "bbb",
+            "type":"promptString",
+            "default": "echo",
+            "description": "promptString"
+        },
+        {
+            "id": "ccc",
+            "type":"command",
+            "command": "extension.sayHello",
+            "args": {
+                "testFolder": "/out/tests",
+            }
+        }
+    ]
+}
